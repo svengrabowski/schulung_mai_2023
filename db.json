@@ -1,0 +1,32 @@
+{
+  "todos": [
+    {
+      "id": 0,
+      "title": "Meeting um 10:00 Uhr",
+      "email": "hansi@test.de",
+      "description": "Um 10:00 Uhr haben wir im großen Besprechungsraum Meeting. Es ist noch vorzubereiten!",
+      "completed": false
+    },
+    {
+      "id": 1,
+      "title": "Einkaufen",
+      "email": "hansi@test.de",
+      "description": "Eier, Käse, Milch, Brot",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Mama anrufen! Hat Geburtstag!",
+      "email": "birgith@test.de",
+      "description": "Mama hat kommenden Montag Geburtstag. Nicht vergessen sie anzurufen!",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Satzbehälter leeren",
+      "email": "hansi@test.de",
+      "description": "Es ist jeden Tag nach der Arbeit der Satzbehälter der Kaffeemaschiene zu leeren.",
+      "completed": false
+    }
+  ]
+}

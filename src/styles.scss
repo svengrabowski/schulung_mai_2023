@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+nav {
+  @extend .navbar;
+}
+
+main {
+  @extend .container;
+}
+
+ul {
+  @extend .list-group;
+}
+
+li {
+  @extend .list-group-item;
+  @extend .d-flex;
+  @extend .justify-content-between;
+  @extend .align-items-center;
+}
+
+button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.button-danger {
+  @extend .btn-danger;
+}
+
+.control-panel {
+  @extend .d-flex;
+  @extend .justify-content-between;
+  @extend .align-items-center;
+  @extend .mb-2;
+}
+
+form {
+  @extend .pl-2;
+
+  label {
+    @extend .col-form-label;
+  }
+
+  input {
+    @extend .form-control;
+  }
+
+  textarea {
+    @extend .form-control;
+    @extend .form-control-lg;
+  }
+
+  select {
+    @extend .form-control;
+  }
+
+  .feedback {
+    @extend .alert;
+    @extend .alert-danger;
+  }
+
+  > div {
+    @extend .form-group;
+  }
+}
+
+input {
+  @extend .form-control;
+  @extend .mb-2;
+}
