@@ -1,0 +1,14 @@
+<todo-todo-control-panel [todoCount]="todoList.length" [(displayAllEmails)]="showEmail"></todo-todo-control-panel>
+<ul class="list-group w-75">
+  <li class="list-group-item" *ngFor="let todo of todoList">
+    <div style="float:right">
+      <button [ngClass]="{ 'btn-warning': todo.completed, 'btn-success': !todo.completed }"
+              (click)="onCompleteClick(todo)">{{getCompletedText(todo)}}</button>
+      <button class="btn-danger" [disabled]="!todo.completed" (click)="onDeleteClick(todo)">Löschen</button>
+    </div>
+    <div>
+      <div [style.text-decoration]="todo.completed ? 'line-through' : ''">{{todo.title}}</div>
+      <small *ngIf="showEmail">{{todo.email}}</small>
+    </div>
+  </li>
+</ul>

@@ -12,7 +12,7 @@
       "title": "Einkaufen",
       "email": "hansi@test.de",
       "description": "Eier, Käse, Milch, Brot",
-      "completed": true
+      "completed": false
     },
     {
       "id": 2,
@@ -22,10 +22,17 @@
       "completed": false
     },
     {
-      "id": 3,
-      "title": "Satzbehälter leeren",
+      "id": 1,
+      "title": "Einkaufen",
       "email": "hansi@test.de",
-      "description": "Es ist jeden Tag nach der Arbeit der Satzbehälter der Kaffeemaschiene zu leeren.",
+      "description": "Eier, Käse, Milch, Brot",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Mama anrufen! Hat Geburtstag!",
+      "email": "birgith@test.de",
+      "description": "Mama hat kommenden Montag Geburtstag. Nicht vergessen sie anzurufen!",
       "completed": false
     }
   ]
