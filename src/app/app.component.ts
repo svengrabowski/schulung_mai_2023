@@ -13,7 +13,19 @@ export class AppComponent {
     "Test",
     "Das ist ein Test",
     "max@mustermann.de",
-    false,
+    true,
     0
   );
+
+  public getCompletedText(): string {
+    return this.todo.completed ? "Zurücknehmen" : "Erledigen";
+  }
+
+  public onCompleteClick(): void {
+    this.todo.completed = !this.todo.completed;
+  }
+
+  public onDeleteClick(): void {
+    console.log("Todo gelöscht");
+  }
 }

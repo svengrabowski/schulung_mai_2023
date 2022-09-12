@@ -1,6 +1,9 @@
-<nav>{{title}}</nav>
-<main>
+<nav class="container navbar">{{title}}</nav>
+<main class="container">
   <div>
-    {{todo.title}} {{todo.email}}
+    <span [style.text-decoration]="todo.completed ? 'line-through' : ''">{{todo.title}}</span>
+    {{todo.email}}
   </div>
+  <button class="btn btn-primary" (click)="onCompleteClick()">{{getCompletedText()}}</button>
+  <button class="btn btn-primary" [disabled]="!todo.completed" (click)="onDeleteClick()">Löschen</button>
 </main>
