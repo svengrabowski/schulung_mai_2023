@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { todos as mockTodos } from "./shared/mock-todos";
 import { TodoItem } from "./shared/todo-item";
 
 @Component({
@@ -7,25 +8,21 @@ import { TodoItem } from "./shared/todo-item";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  public title = "Todos";
+  public title: string = "Todos";
 
-  public todo = new TodoItem(
-    "Test",
-    "Das ist ein Test",
-    "max@mustermann.de",
-    true,
-    0
-  );
+  public todoList: TodoItem[] = mockTodos;
 
-  public getCompletedText(): string {
-    return this.todo.completed ? "Zurücknehmen" : "Erledigen";
+  public showEmail: boolean = true;
+
+  public getCompletedText(todo: TodoItem): string {
+    return todo.completed ? "Zurücknehmen" : "Erledigen";
   }
 
-  public onCompleteClick(): void {
-    this.todo.completed = !this.todo.completed;
+  public onCompleteClick(todo: TodoItem): void {
+    todo.completed = !todo.completed;
   }
 
-  public onDeleteClick(): void {
+  public onDeleteClick(todo: TodoItem): void {
     console.log("Todo gelöscht");
   }
 }

@@ -1,9 +1,16 @@
 <nav class="container navbar">{{title}}</nav>
 <main class="container">
-  <div>
-    <span [style.text-decoration]="todo.completed ? 'line-through' : ''">{{todo.title}}</span>
-    {{todo.email}}
-  </div>
-  <button class="btn btn-primary" (click)="onCompleteClick()">{{getCompletedText()}}</button>
-  <button class="btn btn-primary" [disabled]="!todo.completed" (click)="onDeleteClick()">Löschen</button>
+  <ul class="list-group">
+    <li class="list-group-item w-75" *ngFor="let todo of todoList">
+      <div style="float:right">
+        <button [ngClass]="{ 'btn-warning': todo.completed, 'btn-success': !todo.completed }"
+                (click)="onCompleteClick(todo)">{{getCompletedText(todo)}}</button>
+        <button class="btn-danger" [disabled]="!todo.completed" (click)="onDeleteClick(todo)">Löschen</button>
+      </div>
+      <div>
+        <div [style.text-decoration]="todo.completed ? 'line-through' : ''">{{todo.title}}</div>
+        <small *ngIf="showEmail">{{todo.email}}</small>
+      </div>
+    </li>
+  </ul>
 </main>
