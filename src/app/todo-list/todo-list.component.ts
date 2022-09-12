@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { todos as mockTodos } from '../shared/mock-todos';
+import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 import { TodoItem } from '../shared/todo-item';
 
 @Component({
@@ -7,9 +7,16 @@ import { TodoItem } from '../shared/todo-item';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
 
-  public todoList: TodoItem[] = mockTodos;
+  constructor(private todoService: TodoService) {
+  }
+
+  public ngOnInit() {
+    this.todoList = this.todoService.getAll();
+  }
+
+  public todoList: TodoItem[] = [];
 
   public showEmail: boolean = true;
 
@@ -19,10 +26,11 @@ export class TodoListComponent {
 
   public onCompleteClick(todo: TodoItem): void {
     todo.completed = !todo.completed;
+    this.todoService.update(todo);
   }
 
   public onDeleteClick(todo: TodoItem): void {
-    console.log('Todo gelöscht');
+    this.todoService.delete(todo);
   }
 }
 
