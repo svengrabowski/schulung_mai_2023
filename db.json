@@ -5,7 +5,7 @@
       "title": "Meeting um 10:00 Uhr",
       "email": "hansi@test.de",
       "description": "Um 10:00 Uhr haben wir im großen Besprechungsraum Meeting. Es ist noch vorzubereiten!",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1,
