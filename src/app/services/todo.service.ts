@@ -1,20 +1,27 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { todos } from '../shared/mock-todos';
+import { firstValueFrom } from 'rxjs';
 import { TodoItem } from '../shared/todo-item';
+
+const BASE_URL = 'http://localhost:3000/todos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  public getAll(): TodoItem[] {
-    return todos;
+
+  constructor(private readonly http: HttpClient) {
   }
 
-  public update(todo: TodoItem): void {
-    console.log('Todo aktualisiert');
+  public getAll(): Promise<TodoItem[]> {
+    return firstValueFrom(this.http.get<TodoItem[]>(BASE_URL));
   }
 
-  public delete(todo: TodoItem): void {
-    console.log('Todo gelöscht');
+  public update(todo: TodoItem): Promise<{}> {
+    return firstValueFrom(this.http.put<TodoItem[]>(`${ BASE_URL }/${ todo.id }`, todo));
+  }
+
+  public delete(todo: TodoItem): Promise<{}> {
+    return firstValueFrom(this.http.delete<TodoItem[]>(`${ BASE_URL }/${ todo.id }`));
   }
 }

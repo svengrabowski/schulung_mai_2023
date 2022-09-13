@@ -12,16 +12,15 @@ export class TodoListComponent implements OnInit {
   constructor(private todoService: TodoService) {
   }
 
-  public ngOnInit() {
-    this.todoList = this.todoService.getAll();
-  }
-
   public todoList: TodoItem[] = [];
-
   public showEmail: boolean = true;
 
-  public getCompletedText(todo: TodoItem): string {
-    return todo.completed ? 'Zurücknehmen' : 'Erledigen';
+  public ngOnInit() {
+    this.fetchTodos();
+  }
+
+  public fetchTodos(): Promise<TodoItem[]> {
+    return this.todoService.getAll().then(todos => (this.todoList = todos));
   }
 
   public onCompleteClick(todo: TodoItem): void {
@@ -29,8 +28,13 @@ export class TodoListComponent implements OnInit {
     this.todoService.update(todo);
   }
 
+  public getCompletedText(todo: TodoItem): string {
+    return todo.completed ? 'Zurücknehmen' : 'Erledigen';
+  }
+
   public onDeleteClick(todo: TodoItem): void {
-    this.todoService.delete(todo);
+    this.todoService.delete(todo)
+      .then(() => this.fetchTodos());
   }
 }
 

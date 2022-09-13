@@ -8,17 +8,10 @@
       "completed": false
     },
     {
-      "id": 1,
-      "title": "Einkaufen",
+      "id": 0,
+      "title": "Meeting um 10:00 Uhr",
       "email": "hansi@test.de",
-      "description": "Eier, Käse, Milch, Brot",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "title": "Mama anrufen! Hat Geburtstag!",
-      "email": "birgith@test.de",
-      "description": "Mama hat kommenden Montag Geburtstag. Nicht vergessen sie anzurufen!",
+      "description": "Um 10:00 Uhr haben wir im großen Besprechungsraum Meeting. Es ist noch vorzubereiten!",
       "completed": false
     },
     {
@@ -26,13 +19,6 @@
       "title": "Einkaufen",
       "email": "hansi@test.de",
       "description": "Eier, Käse, Milch, Brot",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "title": "Mama anrufen! Hat Geburtstag!",
-      "email": "birgith@test.de",
-      "description": "Mama hat kommenden Montag Geburtstag. Nicht vergessen sie anzurufen!",
       "completed": false
     }
   ]
