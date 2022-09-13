@@ -7,7 +7,9 @@
       <button class="btn-danger" [disabled]="!todo.completed" (click)="onDeleteClick(todo)">Löschen</button>
     </div>
     <div>
-      <div [style.text-decoration]="todo.completed ? 'line-through' : ''">{{todo.title}}</div>
+      <div [style.text-decoration]="todo.completed ? 'line-through' : ''">
+        <a [routerLink]="todo.id!">{{todo.title}}</a>
+      </div>
       <small *ngIf="showEmail">{{todo.email}}</small>
     </div>
   </li>

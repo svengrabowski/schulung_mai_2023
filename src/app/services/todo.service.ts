@@ -17,6 +17,10 @@ export class TodoService {
     return firstValueFrom(this.http.get<TodoItem[]>(BASE_URL));
   }
 
+  public getById(id: number): Promise<TodoItem> {
+    return firstValueFrom(this.http.get<TodoItem>(`${ BASE_URL }/${ id }`));
+  }
+
   public update(todo: TodoItem): Promise<{}> {
     return firstValueFrom(this.http.put<TodoItem[]>(`${ BASE_URL }/${ todo.id }`, todo));
   }
