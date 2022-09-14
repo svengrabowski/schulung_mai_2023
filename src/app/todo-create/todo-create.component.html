@@ -1,1 +1,27 @@
 <h1>Neues Todo erstellen</h1>
+<form #todoForm="ngForm" (submit)="onSubmit(todoForm)">
+  <div class="form-group">
+    <label for="title">Titel</label>
+    <input class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="todo.title" required>
+    <div class="feedback" *ngIf="title.invalid">
+      Bitte Titel angeben.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">E-Mail</label>
+    <input class="form-control" type="email" id="email" name="email" #email="ngModel" [(ngModel)]="todo.email" email minlength="8">
+    <div class="feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors['email']">
+        Bitte eine gültige E-Mail-Adresse angeben.
+      </div>
+      <div *ngIf="email.errors['minlength']">
+        Die E-Mail muss mehr als 8 Zeichen besitzen.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">Beschreibung</label>
+    <textarea class="form-control" id="description" name="description" [(ngModel)]="todo.description"></textarea>
+  </div>
+  <button class="btn btn-primary" [disabled]="!todoForm.valid">Speichern</button>
+</form>

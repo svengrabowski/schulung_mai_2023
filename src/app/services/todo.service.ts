@@ -13,6 +13,10 @@ export class TodoService {
   constructor(private readonly http: HttpClient) {
   }
 
+  public create(todo: TodoItem): Promise<TodoItem> {
+    return firstValueFrom(this.http.post<TodoItem>(BASE_URL, todo));
+  }
+
   public getAll(): Promise<TodoItem[]> {
     return firstValueFrom(this.http.get<TodoItem[]>(BASE_URL));
   }
