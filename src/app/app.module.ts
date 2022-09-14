@@ -14,12 +14,13 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     TodoListComponent,
     TodoControlPanelComponent,
     TodoDetailComponent,
-    TodoCreateComponent
+    TodoCreateComponent,
+
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
