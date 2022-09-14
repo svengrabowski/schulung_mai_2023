@@ -1,6 +1,12 @@
 <nav class="container navbar bg-dark">
-  <a class="navbar-brand" routerLink="/">{{title}}</a>
-  <button class="btn-success" (click)="navigate('todos/new')">Neues Todo erstellen</button>
+  <div>
+    <a class="navbar-brand" routerLink="/">{{title}}</a>
+    <a class="navbar-brand" routerLink="/groups">Gruppe</a>
+  </div>
+  <div>
+    <button class="btn-success" (click)="navigate('groups/new')">Neue Gruppe erstellen</button>
+    <button class="btn-success" (click)="navigate('todos/new')">Neues Todo erstellen</button>
+  </div>
 </nav>
 <main class="container">
   <router-outlet></router-outlet>

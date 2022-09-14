@@ -1,0 +1,12 @@
+<h1>Neue Gruppe erstellen</h1>
+<form #groupForm="ngForm" (submit)="onSubmit(groupForm)">
+  <div>
+    <label for="title">Title</label>
+    <input name="title" id="title" #title="ngModel" [(ngModel)]="group.title" required>
+    <div class="feedback" *ngIf="title.invalid && (title.dirty || title.touched)">
+      Bitte Titel angeben.
+    </div>
+  </div>
+  <button type="submit" [disabled]="!groupForm.valid">Speichern</button>
+</form>
+
