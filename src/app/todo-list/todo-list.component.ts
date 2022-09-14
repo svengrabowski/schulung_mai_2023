@@ -14,6 +14,7 @@ export class TodoListComponent implements OnInit {
 
   public todoList: TodoItem[] = [];
   public showEmail: boolean = true;
+  public searchQuery: string = '';
 
   public ngOnInit() {
     this.fetchTodos();

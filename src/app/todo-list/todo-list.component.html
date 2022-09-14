@@ -1,6 +1,7 @@
 <todo-todo-control-panel [todoCount]="todoList.length" [(displayAllEmails)]="showEmail"></todo-todo-control-panel>
+<input placeholder="Todo suchen" [(ngModel)]="searchQuery"/>
 <ul class="list-group w-75">
-  <li class="list-group-item" *ngFor="let todo of todoList">
+  <li class="list-group-item" *ngFor="let todo of todoList | search:searchQuery">
     <div style="float:right">
       <button [ngClass]="{ 'btn-warning': todo.completed, 'btn-success': !todo.completed }"
               (click)="onCompleteClick(todo)">{{getCompletedText(todo)}}</button>
