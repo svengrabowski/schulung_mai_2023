@@ -31,9 +31,7 @@ export class AppComponent implements OnInit {
     );
     console.log(this.navEventObservable);
     this.routingSubscription = this.navEventObservable.subscribe({
-      next: (e) => {
-        console.log("at the end of Rx chain", e);
-      },
+      next: (e) => {},
       error: (err) => console.error(err),
     });
   }

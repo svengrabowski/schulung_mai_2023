@@ -29,7 +29,6 @@ export class TodoControlPanelComponent implements DoCheck, OnInit, OnChanges, On
     for (const propertyName in changes) {
       if (changes.hasOwnProperty(propertyName)) {
         const change = changes[propertyName];
-
         console.log(
           `${ propertyName } hat sich von ${ change.previousValue } zu ${
             change.currentValue

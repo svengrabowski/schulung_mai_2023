@@ -1,0 +1,7 @@
+<div *ngIf="todoList.length > 0">
+  <h1>Zuletzt angeschaute Todos</h1>
+  <ul>
+    <li *ngFor="let item of todoList">{{ item.title }}</li>
+  </ul>
+</div>
+

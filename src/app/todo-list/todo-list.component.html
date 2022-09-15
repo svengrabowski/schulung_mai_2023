@@ -1,4 +1,5 @@
 <todo-todo-control-panel [todoCount]="todoList.length" [(displayAllEmails)]="showEmail"></todo-todo-control-panel>
+<div style="float: right;width:20%"></div>
 <input placeholder="Todo suchen" [(ngModel)]="searchQuery"/>
 <ul class="list-group w-75">
   <li class="list-group-item" *ngFor="let todo of todoList | search:searchQuery">

@@ -1,5 +1,10 @@
 {
   "analytics": [
+    {
+      "url": "/todos/new",
+      "date": "2022-09-15T13:59:44.374Z",
+      "id": 1
+    }
   ],
   "todos": [
     {
@@ -7,7 +12,7 @@
       "title": "Meeting um 10:00 Uhr",
       "email": "hansi@test.de",
       "description": "Um 10:00 Uhr haben wir im großen Besprechungsraum Meeting. Es ist noch vorzubereiten!",
-      "completed": true
+      "completed": false
     },
     {
       "id": 1,
