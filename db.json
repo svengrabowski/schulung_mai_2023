@@ -9,6 +9,36 @@
       "url": "/groups",
       "date": "2022-09-15T09:49:06.504Z",
       "id": 2
+    },
+    {
+      "url": "/groups",
+      "date": "2022-09-15T10:12:30.823Z",
+      "id": 3
+    },
+    {
+      "url": "/groups",
+      "date": "2022-09-15T10:13:57.549Z",
+      "id": 4
+    },
+    {
+      "url": "/",
+      "date": "2022-09-15T10:16:12.330Z",
+      "id": 5
+    },
+    {
+      "url": "/todos",
+      "date": "2022-09-15T10:16:15.521Z",
+      "id": 6
+    },
+    {
+      "url": "/todos/new",
+      "date": "2022-09-15T10:16:16.348Z",
+      "id": 7
+    },
+    {
+      "url": "/",
+      "date": "2022-09-15T10:16:59.144Z",
+      "id": 8
     }
   ],
   "todos": [
@@ -32,6 +62,13 @@
       "email": "hansi@test.de",
       "description": "Eier, Käse, Milch, Brot",
       "completed": false
+    },
+    {
+      "title": "asdf",
+      "description": "asdf",
+      "email": "b.stautner@icloud.com",
+      "completed": false,
+      "id": 3
     }
   ],
   "groups": [

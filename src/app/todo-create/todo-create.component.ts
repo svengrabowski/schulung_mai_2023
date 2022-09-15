@@ -19,4 +19,8 @@ export class TodoCreateComponent {
       this.todoService.create(this.todo).then(() => form.reset());
     }
   }
+
+  public confirmAbort(): boolean {
+    return window.confirm('Nicht gespeicherte Daten gehen verloren!');
+  }
 }
