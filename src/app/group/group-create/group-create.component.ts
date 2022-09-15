@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { GroupItem } from '../../shared/group-item';
 import { GroupService } from '../services/group.service';
-import { GroupItem } from '../shared/group-item';
 
 @Component({
   selector: 'todo-group-create',

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GroupItem } from '../shared/group-item';
+import { GroupItem } from '../../shared/group-item';
 
 const BASE_URL = 'http://localhost:3000/groups';
 

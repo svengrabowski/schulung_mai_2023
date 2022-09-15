@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GroupItem } from '../../shared/group-item';
 import { GroupService } from '../services/group.service';
-import { GroupItem } from '../shared/group-item';
 
 @Component({
   selector: 'todo-group-list',
@@ -13,7 +13,7 @@ export class GroupListComponent implements OnInit {
   constructor(private groupService: GroupService) {
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.groupService.getAll()
       .subscribe((groups: GroupItem[]) => (this.groups = groups));
   }
