@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InputLimitDirective } from './directives/input-limit.directive';
 import { SearchPipe } from './pipes/search.pipe';
 import { TodoControlPanelComponent } from './todo-control-panel/todo-control-panel.component';
 import { TodoCreateComponent } from './todo-create/todo-create.component';
@@ -17,7 +18,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     TodoControlPanelComponent,
     TodoDetailComponent,
     TodoCreateComponent,
-    SearchPipe
+    SearchPipe,
+    InputLimitDirective
   ],
   imports: [
     AppRoutingModule,
