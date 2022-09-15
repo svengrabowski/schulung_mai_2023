@@ -4,7 +4,8 @@ export class TodoItem {
     public description = '',
     public email = '',
     public completed = false,
-    public id?: number
+    public id?: number,
+    public group = ''
   ) {
   }
 }
