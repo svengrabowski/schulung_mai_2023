@@ -22,28 +22,28 @@ export class TodoControlPanelComponent implements DoCheck, OnInit, OnChanges, On
   @Output() public displayAllEmailsChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public ngOnInit(): void {
-    console.log('Panel initialisiert');
+    // console.log('Panel initialisiert');
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
     for (const propertyName in changes) {
       if (changes.hasOwnProperty(propertyName)) {
         const change = changes[propertyName];
-        console.log(
-          `${ propertyName } hat sich von ${ change.previousValue } zu ${
-            change.currentValue
-          } geändert`
-        );
+        // console.log(
+        //   `${ propertyName } hat sich von ${ change.previousValue } zu ${
+        //     change.currentValue
+        //   } geändert`
+        // );
       }
     }
   }
 
   public ngDoCheck(): void {
-    console.log('Panel wird auf Änderungen geprüft');
+    // console.log('Panel wird auf Änderungen geprüft');
   }
 
   public ngOnDestroy(): void {
-    console.log('Panel zerstört');
+    // console.log('Panel zerstört');
   }
 
   public toggleShowEmail(): void {

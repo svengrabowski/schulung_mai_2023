@@ -1,29 +1,23 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { TodoItem } from '../../shared/todo-item';
+import { RootState } from '../../state-store/root.state';
+import { getLastFiveFromTodoState } from '../../state-store/todos/todo.selector';
 
 @Component({
   selector: 'todo-todo-list-history',
   templateUrl: './recent-todos.component.html'
 })
-export class RecentTodosComponent implements OnInit, OnDestroy {
+export class RecentTodosComponent implements OnInit {
 
-  public todoList: TodoItem[] = [];
+  public lastFiveTodo$: Observable<TodoItem[]>;
 
-  private subscription: Subscription = new Subscription();
-
-  constructor(private store: Store<{todoList: []}>) {
+  constructor(private store: Store<RootState>) {
+    this.lastFiveTodo$ = this.store.select(getLastFiveFromTodoState);
   }
 
   public ngOnInit(): void {
-    this.subscription = this.store
-      .subscribe((x) => {
-        this.todoList = x.todoList;
-      });
-  }
 
-  public ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }

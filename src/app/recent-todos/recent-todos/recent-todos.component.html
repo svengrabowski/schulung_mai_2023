@@ -1,7 +1,9 @@
-<div *ngIf="todoList.length > 0">
-  <h1>Zuletzt angeschaute Todos</h1>
-  <ul>
-    <li *ngFor="let item of todoList">{{ item.title }}</li>
-  </ul>
-</div>
+<ng-container *ngIf="lastFiveTodo$ | async as lastFiveTodoList">
+  <div *ngIf="lastFiveTodoList.length > 0" class="pl-4 pt-4">
+    <h4>Zuletzt angeschaute Todos</h4>
+    <ol>
+      <li *ngFor="let item of lastFiveTodoList">{{ item.title }}</li>
+    </ol>
+  </div>
+</ng-container>
 
